@@ -16,4 +16,4 @@
 - Docker
 - PostgreSQL
 - Mongodb
-- etc ....
+- etc.
