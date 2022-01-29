@@ -1,7 +1,7 @@
 # go-all-about-web-development
 
-- [Templates](https://github.com/raihaninfo/go-all-about-web/tree/main/templates)
-- Creating Server
+- [Templates](/templates)
+- [Creating Server](/creating_Server)
 - Understanding net/http package
 - Understanding routing
 - Serving files
