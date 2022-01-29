@@ -2,7 +2,7 @@
 
 - [Templates](/templates)
 - [Creating Server](/creating_Server)
-- Understanding net/http package
+- [Understanding net/http package](/net-http_server)
 - Understanding routing
 - Serving files
 - Deploying site
