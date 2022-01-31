@@ -37,7 +37,6 @@ type Company struct {
 	Bs          string `json:"bs"`
 }
 
-
 func main() {
 	req, err := http.Get("https://jsonplaceholder.typicode.com/users/5")
 	if err != nil {
