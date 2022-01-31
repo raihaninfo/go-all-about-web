@@ -36,15 +36,10 @@ type Company struct {
 	CatchPhrase string `json:"catchPhrase"`
 	Bs          string `json:"bs"`
 }
-type UserInfo struct {
-	User    User
-	Address Address
-	Geo     Geo
-	Company Company
-}
+
 
 func main() {
-	req, err := http.Get("https://jsonplaceholder.typicode.com/users/1")
+	req, err := http.Get("https://jsonplaceholder.typicode.com/users/5")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -53,8 +48,10 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	var u UserInfo
+	var u User
+
 	// fmt.Println(string(data))
 	json.Unmarshal(data, &u)
 	fmt.Println(u)
+	fmt.Printf("Name: %v, Address : %v, username: %v \n", u.Name, u.Address.City, u.Username)
 }
