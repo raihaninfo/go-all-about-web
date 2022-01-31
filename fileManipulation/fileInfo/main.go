@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fileInfo, err := os.Stat("file.txt")
+	fileInfo, err := os.Stat("newfile.txt")
 	if err != nil {
 		fmt.Println(err)
 	}
