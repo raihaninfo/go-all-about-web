@@ -27,9 +27,9 @@ func main() {
 		Website:  "mdabraihan.tech",
 		Company:  "Master Academy",
 	}
-	data, err:= json.Marshal(user1)
-	if err!=nil{
+	data, err := json.Marshal(user1)
+	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(data)
+	fmt.Println(string(data))
 }
