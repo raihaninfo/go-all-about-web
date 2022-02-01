@@ -11,11 +11,13 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+	defer mainFile.Close()
 	newFile, err := os.Create("compFile.txt")
 	if err != nil {
 		fmt.Println(err)
 	}
-	copy, err := io.Copy(mainFile, newFile)
+	defer newFile.Close()
+	copy, err := io.Copy(newFile, mainFile)
 	if err != nil {
 		fmt.Println(err)
 	}
