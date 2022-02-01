@@ -16,5 +16,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	//by default ioutil sent byte, make string
 	fmt.Println(string(text))
 }
