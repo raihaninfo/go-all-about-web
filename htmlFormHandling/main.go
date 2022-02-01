@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -28,7 +27,6 @@ func process(w http.ResponseWriter, r *http.Request) {
 	}
 	fname := r.FormValue("fname")
 	lname := r.FormValue("lname")
-	fmt.Println(fname, lname)
 
 	d := struct {
 		First string
