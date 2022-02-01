@@ -12,7 +12,9 @@ func main() {
 	}
 	defer file.Close()
 
-	write, err := file.Write([]byte("Test file"))
+	fileText := "This is dymmy text"
+
+	write, err := file.Write([]byte(fileText))
 	if err != nil {
 		fmt.Println(err)
 	}
