@@ -9,8 +9,8 @@ import (
 
 type anything int
 
-func (m anything) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	err := req.ParseForm()
+func (m anything) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	err := r.ParseForm()
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -19,8 +19,8 @@ func (m anything) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		Method      string
 		Submissions url.Values
 	}{
-		req.Method,
-		req.Form,
+		r.Method,
+		r.Form,
 	}
 	tpl.ExecuteTemplate(w, "index.gohtml", data)
 }
@@ -33,5 +33,5 @@ func init() {
 
 func main() {
 	var d anything
-	http.ListenAndServe(":8080", d)
+	http.ListenAndServe(":8082", d)
 }
