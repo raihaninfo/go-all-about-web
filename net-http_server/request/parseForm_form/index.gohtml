@@ -11,9 +11,9 @@
 {{if .}}
 <main>
     <p><strong>variable names</strong>{identifiers} and <em>values</em>; </p>
-    {{range $key. $value := .}}
+    {{range $key, $value := .}}
         <p><strong>{{$key}}</strong></p>
-    <ul>{{range $value}} <li><em>{{.}}</em></li>{{end}} </ul>
+        <ul>{{range $value}} <li><em>{{.}}</em></li>{{end}} </ul>
     {{end}}
 </main>
 {{end}}
