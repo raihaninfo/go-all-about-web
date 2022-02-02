@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{{if .}}
+<main>
+    <p><strong>variable names</strong>{identifiers} and <em>values</em>; </p>
+    {{range $key. $value := .}}
+        <p><strong>{{$key}}</strong></p>
+    <ul>{{range $value}} <li><em>{{.}}</em></li>{{end}} </ul>
+    {{end}}
+</main>
+{{end}}
+
+<form action="/" method="POST">
+    <input type="text" name="fname" placeholder="First name">
+    <input type="submit" name="submit-btn" value="Submit">
+</form>
+
+</body>
+</html>
