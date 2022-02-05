@@ -9,8 +9,8 @@ import (
 
 type hotdog int
 
-func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	err := req.ParseForm()
+func (m hotdog) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	err := r.ParseForm()
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -21,10 +21,10 @@ func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		Submissions map[string][]string
 		Header      http.Header
 	}{
-		req.Method,
-		req.URL,
-		req.Form,
-		req.Header,
+		r.Method,
+		r.URL,
+		r.Form,
+		r.Header,
 	}
 	tpl.ExecuteTemplate(w, "index.gohtml", data)
 }
